@@ -1,0 +1,17 @@
+Description:
+ remapping keycodes of /dev/input/event devices
+
+Building:
+  make
+
+Usage:
+ukeycodes /dev/input/eventX [options]
+
+options:
+  -h, --help  this message
+  -r  original_code=remapped_code[:sequence_length]
+              eg: ukeycodes /dev/input/event0 -r "2=3 3=4 5=6 6=7"
+                  ukeycodes /dev/input/event0 -r "2=3:4"
+  -u          path to uinput device (default: /dev/uinput)
+  -n          name for uinput device (default: Custom input device)
+  -v          verbose mode: print input codes
